@@ -43,5 +43,8 @@ export default {
             bundleStrategy: 'single',
             preloadStrategy: 'modulepreload',
         },
+        csrf: {
+            checkOrigin: false,
+        }
     },
 };

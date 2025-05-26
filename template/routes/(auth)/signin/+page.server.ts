@@ -39,7 +39,7 @@ export const actions: Actions = {
 
         const securedUser = await prisma.user.update({
             where: { id: user.id },
-            data: { authToken: Bun.randomUUIDv7('hex') }
+            data: { authToken: crypto.randomUUID() }
         });
 
         __event__.cookies.set('session', securedUser.authToken as string, {
