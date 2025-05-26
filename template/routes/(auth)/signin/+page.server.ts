@@ -4,6 +4,7 @@ import { getForm } from "./signin.schema";
 import prisma from '$server/prisma';
 import { message } from "sveltekit-superforms";
 import { dev } from "$app/environment";
+import { compare } from 'bcrypt';
 
 export const load: PageServerLoad = async ({ locals, cookies }) => {
     if (locals.user) redirect(302, '/');
@@ -30,7 +31,7 @@ export const actions: Actions = {
             status: 404
         });
 
-        const isPasswordValid = await Bun.password.verify(form.data.password, user.password);
+        const isPasswordValid = await compare(form.data.password, user.password);
 
         if (!isPasswordValid) return message(form, 'Неправильная почта или пароль!', {
             status: 401

@@ -3,6 +3,7 @@ import type { PageServerLoad } from "./$types";
 import { getForm } from "./signup.schema";
 import { message } from 'sveltekit-superforms';
 import prisma from '$server/prisma';
+import { genSalt, hash } from 'bcrypt';
 
 export const load: PageServerLoad = async ({ locals }) => {
     if (locals.user) redirect(302, '/');
@@ -40,9 +41,7 @@ export const actions: Actions = {
                 firstName: form.data.firstName,
 
                 email: form.data.email,
-                password: await Bun.password.hash(form.data.password, {
-                    algorithm: 'argon2id',
-                }),
+                password: await hash(form.data.password, await genSalt(5)),
             }
         });
 
