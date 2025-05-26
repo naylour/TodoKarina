@@ -1,0 +1,12 @@
+{
+    "editor.defaultFormatter": "biomejs.biome",
+    "[svelte]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    }
+}

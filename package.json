@@ -1,0 +1,62 @@
+{
+    "name": "todo",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "bun --bun vite dev --host",
+        "build": "bun --bun vite build",
+        "preview": "vite preview",
+        "prepare": "svelte-kit sync || echo ''",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "test:unit": "vitest",
+        "test": "npm run test:unit -- --run && npm run test:e2e",
+        "test:e2e": "playwright test"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.9.4",
+        "@lucide/svelte": "^0.511.0",
+        "@playwright/test": "^1.52.0",
+        "@sveltejs/adapter-auto": "^6.0.1",
+        "@sveltejs/kit": "^2.21.1",
+        "@sveltejs/vite-plugin-svelte": "^5.0.3",
+        "@tailwindcss/vite": "^4.1.7",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/svelte": "^5.2.8",
+        "@types/bun": "^1.2.14",
+        "@types/node": "^22.15.21",
+        "bits-ui": "^1.8.0",
+        "clsx": "^2.1.1",
+        "formsnap": "^2.0.1",
+        "jsdom": "^26.1.0",
+        "svelte": "^5.33.2",
+        "svelte-check": "^4.2.1",
+        "svelte-sonner": "^1.0.1",
+        "sveltekit-superforms": "^2.25.0",
+        "tailwind-merge": "^3.3.0",
+        "tailwind-variants": "^0.2.1",
+        "tailwindcss": "^4.1.7",
+        "tw-animate-css": "^1.3.0",
+        "typescript": "^5.8.3",
+        "vaul-svelte": "^1.0.0-next.7",
+        "vite": "^6.3.5",
+        "vitest": "^3.1.4"
+    },
+    "prisma": {
+        "schema": "./prisma/schema"
+    },
+    "dependencies": {
+        "@hono/zod-validator": "^0.5.0",
+        "@prisma/client": "^6.8.2",
+        "dayjs": "^1.11.13",
+        "eruda": "^3.4.1",
+        "hono": "^4.7.10",
+        "ky": "^1.8.1",
+        "mode-watcher": "^1.0.7",
+        "prisma": "^6.8.2",
+        "runed": "^0.28.0",
+        "svelte-adapter-bun": "^0.5.2",
+        "zod": "^3.25.28"
+    }
+}

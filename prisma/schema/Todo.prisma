@@ -1,0 +1,15 @@
+model Todo {
+    id String @id @default(ulid())
+
+    title       String
+    description String?
+
+    isDone Boolean @default(false)
+    user   String
+
+    updatedAt DateTime @updatedAt @map("updated_at")
+    User      User     @relation(fields: [user], references: [id], onDelete: Cascade)
+
+    @@index([user])
+    @@map("Todos")
+}
