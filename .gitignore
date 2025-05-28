@@ -8,7 +8,7 @@ node_modules
 .wrangler
 /.svelte-kit
 /build
-prisma/db.sqlite
+/prisma/db.sqlite
 
 # OS
 .DS_Store
