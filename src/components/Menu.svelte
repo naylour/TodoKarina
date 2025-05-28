@@ -29,14 +29,14 @@ import SignOut from './SignOut.svelte';
                 Аккаунт
             </Dropdown.Label>
             <Dropdown.Separator />
-            <Dropdown.Item>
+            <!-- <Dropdown.Item>
                 {#snippet child({ props })}
                     <a {...props}  href="/profile">
                         <UserIcon />
                         <span>Профиль</span>
                     </a>
                 {/snippet}
-            </Dropdown.Item>
+            </Dropdown.Item> -->
             <Dropdown.Item >
                 <SignOut />
             </Dropdown.Item>

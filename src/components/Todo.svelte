@@ -26,7 +26,7 @@ interface Props {
 
 
 <div>
-    <div class="flex items-start gap-2">
+    <div class="flex items-center gap-2">
         <Checkbox checked={todo.isDone} onCheckedChange={async checked => {
             const response = await api.patch(`todo/${todo.id}`, {
                 json: {
@@ -35,11 +35,12 @@ interface Props {
             });
 
             if(response.ok) {
-                toast.success('Поздравляю!');
+                if(checked) toast.success('Задача завершена!');
+                else toast.success('Задача возвращена!');
                 onchecked?.();
             }
         }} />
-        <Label for="{uid}-todo-{todo.id}" class="flex items-start justify-between w-full">
+        <Label for="{uid}-todo-{todo.id}" class="flex items-center justify-between w-full">
             <div class="flex flex-col gap-1">
                 <h5 class="text-[18px] font-medium">{ todo.title }</h5>
                 <p class="line-clamp-1 text-[14px] font-semibold text-muted-foreground text-start">{todo.description}</p>
@@ -68,7 +69,7 @@ interface Props {
                 json: data
             });
 
-            if(response.status === 201) {
+            if(response.status === 200) {
                 toast.success('Успешно!')
                 onchecked?.();
                 __event__.currentTarget?.reset?.();
@@ -84,7 +85,7 @@ interface Props {
             </div>
             <div class="flex items-center gap-2">
                 <Checkbox id="{uid}-isDone" name="isDone" checked={todo.isDone} />
-                <Label for="{uid}-isDone">Описание</Label>
+                <Label for="{uid}-isDone">Выполнено</Label>
             </div>
             <Button type="submit">Обновить</Button>
         </form>

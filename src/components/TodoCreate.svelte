@@ -48,7 +48,7 @@ interface Props {
             });
 
             if(response.status === 201) {
-                toast.success('Успешно!')
+                toast.success('Задача зобавлена!')
                 oncreate?.();
                 __event__.currentTarget?.reset?.();
                 isOpen = false;
