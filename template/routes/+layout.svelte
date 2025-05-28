@@ -11,9 +11,9 @@ import { Toaster } from '$components/ui/sonner';
     let { children } = $props();
 
     onMount(async () => {
-        if(dev) {
-            (await import('eruda')).default.init()
-        }
+        // if(dev) {
+        //     (await import('eruda')).default.init()
+        // }
     })
 </script>
 

@@ -40,7 +40,7 @@ interface Props {
                 onchecked?.();
             }
         }} />
-        <Label for="{uid}-todo-{todo.id}" class="flex items-center justify-between w-full">
+        <Label for="{uid}-todo-{todo.id}" class={["flex items-center justify-between w-full", todo.isDone && "line-through text-input"]}>
             <div class="flex flex-col gap-1">
                 <h5 class="text-[18px] font-medium">{ todo.title }</h5>
                 <p class="line-clamp-1 text-[14px] font-semibold text-muted-foreground text-start">{todo.description}</p>

@@ -26,7 +26,7 @@ interface Props {
         validators: validator
     });
 
-    const { form: formData, enhance } = form;
+    const { form: formData, enhance, message } = form;
 
     let showPasswordState = $state.raw(false);
 </script>
@@ -62,6 +62,9 @@ interface Props {
             <Form.Description>Введите пароль</Form.Description>
             <Form.FieldErrors />
         </Form.Field>
+        {#if $message}
+            {$message}
+        {/if}
         <p class="inline-flex gap-2 tex-sm pb-2">
             <span class="text-sm">Ещё нет аккаунта?</span> <Button class="inline h-auto p-0 text-sm" variant="link" href="/signup">Зарегистрируйтесь</Button>
         </p>
